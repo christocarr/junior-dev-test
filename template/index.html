@@ -38,6 +38,24 @@
 			display: none;
 		}
 
+		.cta {
+			position: relative;
+			overflow: hidden;
+			height: 45px;
+			width: 150px;
+		}
+
+		.shine {
+			height: 200%;
+			width: 20px;
+			position: absolute;
+			top: -20px;
+			left: -70px;
+			z-index: 1001;
+			background: rgba(255, 255, 255, 0.295);
+			transform: rotate(45deg);
+		}
+
 	</style>
 </head>
 
@@ -54,7 +72,11 @@
 			<div class="end">
 				<img id="imgFive" class="logo" src="images/logo.png" alt="">
 				<img id="imgSix" class="slogan" src="images/copy5.png" alt="">
-				<img id="imgSeven" class="cta" src="images/cta.png" alt="">
+				<div id="imgSeven" class="cta" >
+					<img src="images/cta.png" alt="">
+					<div class="shine"></div>
+				</div>
+				
 			</div>
 		</div>
 	</a>
@@ -87,6 +109,7 @@
 				.to('#imgFive', 0.7, {opacity:1})
 				.to('#imgSix', 0.7, {opacity:1})
 				.to('#imgSeven', 0.7, {opacity:1})
+				.to('.shine', 0.7, {x:250})
 		});
 	</script>
 </body>
