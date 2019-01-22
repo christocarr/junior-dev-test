@@ -81,14 +81,14 @@
 		</div>
 	</a>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenLite.min.js"></script>
-
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TimelineLite.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TimelineMax.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/plugins/CSSPlugin.min.js"></script>
+
 
 	<script type="text/javascript">
 		var clickTag = "";
 		window.addEventListener('load', function() {
-			let tl = new TimelineLite();
+			let tl = new TimelineMax({repeat:-1, repeatDelay:2});
 			tl.to('#imgOne', 0.5, {opacity:1})
 				.to('#imgOne', 0.5, {opacity:0})
 				.to('#imgTwo', 0.5, {opacity:1})
@@ -109,7 +109,7 @@
 				.to('#imgFive', 0.7, {opacity:1})
 				.to('#imgSix', 0.7, {opacity:1})
 				.to('#imgSeven', 0.7, {opacity:1})
-				.to('.shine', 0.7, {x:250})
+				.to('.shine', 0.6, {x:250})
 		});
 	</script>
 </body>
