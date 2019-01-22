@@ -6,17 +6,89 @@
 	<meta name="ad.size" content="width=300, height=250">
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>StarLeaf 300x250 Banner</title>
-	<script type="text/javascript">
-		var clickTag = "";
-	</script>
+	<style>
+		#banner {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 200px;
+			width: 100%;
+		}
+
+		.wrapper {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 50%;
+			height: 60px;
+		}
+
+		.img  {
+			position: absolute;
+			opacity: 0;
+		}
+
+		.logo, .slogan, .cta {
+			opacity: 0;
+		}
+
+		.end {
+			display: none;
+		}
+
+	</style>
 </head>
 
 <body>
 	<a href="javascript:window.open(window.clickTag)">
-		<div id="banner" class="size" style="display:none;opacity:0;">
-
+		<div id="banner" class="size" >
+			<div class="wrapper">
+					<img id="imgOne" class="img" src="images/copy1.png" alt="">
+					<img id="imgTwo" class="img" src="images/copy2.png" alt="">
+					<img id="imgThree" class="img" src="images/copy3.png" alt="">
+					<img id="imgFour" class="img" src="images/copy4.png" alt="">
+			</div>		
+			<img id="imgZero" src="images/copy0.png" alt="">
+			<div class="end">
+				<img id="imgFive" class="logo" src="images/logo.png" alt="">
+				<img id="imgSix" class="slogan" src="images/copy5.png" alt="">
+				<img id="imgSeven" class="cta" src="images/cta.png" alt="">
+			</div>
 		</div>
 	</a>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenLite.min.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TimelineLite.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/plugins/CSSPlugin.min.js"></script>
+
+	<script type="text/javascript">
+		var clickTag = "";
+		window.addEventListener('load', function() {
+			let tl = new TimelineLite();
+			tl.to('#imgOne', 0.5, {opacity:1})
+				.to('#imgOne', 0.5, {opacity:0})
+				.to('#imgTwo', 0.5, {opacity:1})
+				.to('#imgTwo', 0.5, {opacity:0})
+				.to('#imgThree', 0.5, {opacity:1})
+				.to('#imgThree', 0.5, {opacity:0})
+				.to('#imgFour', 0.5, {opacity:1})
+				.to('#imgFour', 0.5, {opacity:0})
+				.to('#imgZero', 0.5, {opacity:0})
+				.to('.wrapper', 0.1, {display:'none'})
+				.to('#imgZero', 0.1, {display:'none'})
+				.to('.end', 0.1, {
+					display:'flex',
+					flexDirection: 'column',
+					alignItems:'center',
+					justifyContent:'center',
+				})
+				.to('#imgFive', 0.7, {opacity:1})
+				.to('#imgSix', 0.7, {opacity:1})
+				.to('#imgSeven', 0.7, {opacity:1})
+		});
+	</script>
 </body>
 
 </html>
